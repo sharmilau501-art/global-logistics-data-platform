@@ -1,0 +1,11 @@
+PHASE 7 - LOCAL VERIFICATION AND PORTFOLIO HANDOFF
+==================================================
+1. Extract phase7 ZIP to your existing project root (overwrite README and .gitignore).
+2. In PowerShell from C:\Users\uppal\projects\global-logistics:
+   python -m pytest -q
+   .\scripts\phase7-check.ps1
+3. Optional self-contained Docker tests:
+   docker build -f Dockerfile.test -t global-logistics-tests .
+   docker run --rm --network none global-logistics-tests
+4. Follow docs/PHASE7.md for GitHub publication and screenshots.
+No AWS services or paid API required. Do NOT upload the data/ folder or credentials.

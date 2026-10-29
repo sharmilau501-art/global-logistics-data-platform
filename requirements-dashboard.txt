@@ -1,0 +1,2 @@
+-r requirements-warehouse.txt
+streamlit>=1.60,<2

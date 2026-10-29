@@ -1,0 +1,18 @@
+Global Logistics Phase 4 — LOCAL DUCKDB WAREHOUSE
+
+Add-on only: extract these files into your existing
+C:\Users\uppal\projects\global-logistics folder.
+Do NOT delete your existing Phase 1-3 files.
+
+In PowerShell from that folder:
+
+python -m pip install -r requirements-warehouse.txt
+python -m logistics.warehouse build
+python -m logistics.warehouse report
+Get-Content .\data\warehouse\warehouse_metrics.json
+python -m pytest -q
+
+Requires successful Phase 3 data/lake Parquet outputs.
+For more detail see docs/PHASE4.md.
+
+All workloads are local and open-source. No AWS/cloud resources are created.

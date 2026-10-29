@@ -1,0 +1,12 @@
+# Completely local reproducible test environment. No AWS or paid APIs.
+FROM python:3.14-slim
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+COPY requirements-dev.txt requirements-stream.txt requirements-warehouse.txt ./
+RUN python -m pip install --no-cache-dir -r requirements-stream.txt -r requirements-warehouse.txt
+COPY logistics/ ./logistics/
+COPY tests/ ./tests/
+COPY sql/ ./sql/
+CMD ["python", "-m", "pytest", "-q"]

@@ -1,0 +1,17 @@
+# Local environment and generated outputs (no synthetic data or DB files in Git)
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.duckdb
+*.duckdb.*
+*.db
+/data/
+.sparkStaging/
+*.log
+.DS_Store
+# Local Streamlit secrets only; keep config.toml
+.streamlit/secrets.toml

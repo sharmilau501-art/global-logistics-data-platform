@@ -1,0 +1,22 @@
+PHASE 6 — LOCAL DASHBOARD AND OPTIONAL LOCAL AI — $0 CLOUD CHARGES
+
+Extract this ZIP into C:\Users\uppal\projects\global-logistics (the existing project folder).
+
+In activated PowerShell .venv:
+  cd "C:\Users\uppal\projects\global-logistics"
+  python -m pip install -r requirements-dashboard.txt
+  python -m pytest -q
+  python -m logistics.analytics
+  python -m logistics.assistant --question "Which carrier has the most late deliveries?"
+  python -m streamlit run dashboard.py
+
+Open http://127.0.0.1:8501 in your browser. Press Ctrl+C in PowerShell to stop.
+
+NO Ollama installation is required for the verified metric-answer assistant.
+OPTIONAL: to use a local generative model later, install Ollama separately, pull an
+available free local model (for example llama3.2:1b), run it locally, and select
+"Optional: explain with Ollama" in the dashboard. This does NOT call a paid API.
+The optional model may require several GB of download/disk and will use local CPU/RAM.
+
+The project performs no AWS or paid cloud calls. Streamlit telemetry is disabled.
+See docs/PHASE6.md for details.

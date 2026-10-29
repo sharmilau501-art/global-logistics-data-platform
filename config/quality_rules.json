@@ -1,0 +1,6 @@
+{
+  "minimum_shipments": 1,
+  "minimum_unique_events": 1,
+  "max_invalid_rate_pct": 5.0,
+  "max_duplicate_rate_pct": 10.0
+}
